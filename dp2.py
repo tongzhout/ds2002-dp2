@@ -34,7 +34,7 @@ for (root, dirs, files) in os.walk(path):
                     added_values = collection.insert_one(file_data)
                     imported_count += entry_count
         except json.JSONDecodeError as e:
-            print("Expecting property name enclosed in double quotes")
+            print("Error faces:", e)
             corrupted_count += 1
             orphaned_count = entry_count - 1
         
